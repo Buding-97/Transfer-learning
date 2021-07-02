@@ -1,6 +1,6 @@
 # -Transfer-learning-
 
-#### Freeze network parameters, i.e. not updated during training
+### Freeze network parameters, i.e. not updated during training
 
 ```python
 class Net(nn.Module):
@@ -15,7 +15,7 @@ class Net(nn.Module):
                                 )
         self.classifier = nn.Linear()
 ```
-** Set the layer requires_grad attribute to False to freeze the layer parameters **
+**Set the layer requires_grad attribute to False to freeze the layer parameters**
 Example:
 ```python
 for param in layer.parameters():
@@ -36,12 +36,12 @@ class Net(nn.Module):
         	param.requires_gard = False
         self.classifier = nn.Linear()
 ```
-** We also need to tell the optimizer which needs to be updated and which does not. This step is very important **
+**We also need to tell the optimizer which needs to be updated and which does not. This step is very important**
 
 ```python
 optimizer.SGD(filter(lambda p: p.requires_grad, model.parameters()), lr=1e-5)
 ```
-** We can also freeze most of the layers **
+**We can also freeze most of the layers**
 ```python
 class Net(nn.Module):
     def __init__(self):
@@ -58,5 +58,3 @@ class Net(nn.Module):
         #这样for循环之前的参数都被冻结，其后的正常更新。
         self.classifier = nn.Linear()
 ```
-
-
