@@ -15,7 +15,7 @@ class Net(nn.Module):
                                 )
         self.classifier = nn.Linear()
 ```
-**Set the layer requires_grad attribute to False to freeze the layer parameters**
+**Set the layer requires_grad attribute to False to freeze the layer parameters**  
 Example:
 ```python
 for param in layer.parameters():
