@@ -1,4 +1,4 @@
-# -Transfer-learning-
+# Transfer-learning
 
 ### Freeze network parameters, i.e. not updated during training
 
@@ -58,3 +58,5 @@ class Net(nn.Module):
         #这样for循环之前的参数都被冻结，其后的正常更新。
         self.classifier = nn.Linear()
 ```
+
+https://blog.csdn.net/guyuealian/article/details/94181896
